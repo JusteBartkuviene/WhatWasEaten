@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="w3-row">
+  <div class="w3-col" style="width:150px; text-align:center; text-decoration: solid;"><p>Select</p></div>
+  <div class="w3-rest w3-light-grey" style="padding-left: 40px;"><p>
+
+<form action="/summary" method="POST">
+<label for="years">Year:</label>
+<select name="years" id="years">
+  <option value="2021">2021</option>
+  <option value="2022">2022</option>
+</select>
+
+<label for="months">  Month:</label>
+<select name="months" id="months">
+  <option value="Jan">Jan</option>
+  <option value="Feb">Feb</option>
+  <option value="Mar">Mar</option>
+  <option value="Apr">Apr</option>
+  <option value="May">May</option>
+  <option value="Jun">Jun</option>
+  <option value="Jul">Jul</option>
+  <option value="Aug">Aug</option>
+  <option value="Sep">Sep</option>
+  <option value="Oct">Oct</option>
+  <option value="Nov">Nov</option>
+  <option value="Dec">Dec</option>
+</select>
+
+<label for="kids">Kid:</label>
+<select name="kids" id="kids">
+  <option value="Jurgis">Jurgis</option>
+  <option value="Morta">Morta</option>
+</select>
+<br><br>
+
+<input type="submit" value="Show report">
+<br>
+</form>
+</p></div>
+</div>
+<br>
+<div class="w3-col" style="width:150px; text-align:center; text-decoration: solid;"><p>Results</p></div>
+<div class="w3-rest w3-light-grey" style="padding-left: 40px;"><p>
+<table>
+  <tr style="border: 1px;">
+      <th style="width: 100px;">Year</th>
+      <th style="width: 100px;">Month</th>
+      <th style="width: 200px;">Kid</th>
+      <th style="width: 100px;">Lunches</th>
+      <th style="width: 100px;">Dinners</th>
+  </tr>
+  <tr style="text-align:center;">
+      <td>{{year_form}}</td>
+      <td>{{month_form}}</td>
+      <td>{{kid_form}}</td>
+      <td>{{lunch_counter}}</td>
+      <td>{{dinner_counter}}</td>
+  </tr>
+</table>
+</div>
+<br>
+</div>
+
+{% endblock %}

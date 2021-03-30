@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<p style="color: red; margin-left: 50px;">{{msg}}</p>
+
+<form action="/delete" method="POST">
+<div class="w3-col" style="width:150px; text-align:center; text-decoration: solid;"><p>Delete entries</p></div>
+<div class="w3-rest w3-light-grey" style="padding-left: 40px;">
+<table>
+      <tr style="border: 1px;">
+      <th style="width: 100px;">Year</th>
+      <th style="width: 100px;">Month</th>
+      <th style="width: 100px;">Day</th>
+      <th style="width: 100px;">Kid</th>
+      <th style="width: 100px;">Lunches</th>
+      <th style="width: 100px;">Dinners</th>
+  </tr>
+  <tr style="text-align:center;">
+    {% for row in rows %}  
+      <td style="text-align:center;">{{row[1]}}</td>
+      <td style="text-align:center;">{{row[2]}}</td>
+      <td style="text-align:center;">{{row[4]}}</td>        
+      <td style="text-align:center;">{{row[0]}}</td>
+      <td style="text-align:center;">{{row[5]}}</td>
+      <td style="text-align:center;">{{row[6]}}</td>
+      <td><button class="w3-button w3-tiny w3-grey w3-round" type="submit" name="delete" value="{{row[0]}} {{row[1]}} {{row[2]}} {{row[4]}}">Delete</button></td>
+    </tr>
+    {% endfor %}
+</table>
+</form>
+</div>
+<br>
+</div>
+</div>
+<br>
+</div>
+
+{% endblock %}

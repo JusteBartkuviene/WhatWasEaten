@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<div class="w3-row">
+    <div class="w3-col" style="width:150px; text-align:center;"><p>Select</p></div>
+    <div class="w3-rest w3-light-grey" style="padding-left: 40px;"><p>
+
+<form action="/calendar" method="POST">
+  <label for="years">Year:</label>
+  <select name="years" id="years">
+    <option value="2021">2021</option>
+    <option value="2022">2022</option>
+  </select>
+
+  <label for="months">  Month:</label>
+  <select name="months" id="months">
+    <option value="Jan">Jan</option>
+    <option value="Feb">Feb</option>
+    <option value="Mar">Mar</option>
+    <option value="Apr">Apr</option>
+    <option value="May">May</option>
+    <option value="Jun">Jun</option>
+    <option value="Jul">Jul</option>
+    <option value="Aug">Aug</option>
+    <option value="Sep">Sep</option>
+    <option value="Oct">Oct</option>
+    <option value="Nov">Nov</option>
+    <option value="Dec">Dec</option>
+  </select>
+
+  <label for="kids">Kid:</label>
+  <select name="kids" id="kids">
+    <option value="Jurgis">Jurgis</option>
+    <option value="Morta">Morta</option>
+  </select>
+<br><br>
+  
+  <input type="submit" value="Show calendar">
+  <br>
+</form>
+</p></div>
+<br>
+<div class="w3-col" style="width:150px; text-align:center; text-decoration: solid;"><p>Results</p></div>
+<div class="w3-rest w3-light-grey" style="padding-left: 40px;"><p>
+
+<form action="/calendar" method="POST">
+  <table>
+  <div style="color: black; font-size: 18px; margin-left: 40px;">{{kid_form}} {{year_form}} {{month_form}} </p>
+  <tr style="border: 1px;">
+      <th style="width: 100px;">Day</th>
+      <th style="width: 100px;">Lunches</th>
+      <th style="width: 100px;">Dinners</th>
+  </tr>
+  <tr style="text-align:center;">
+    {% for row in rows %}          
+      <td style="text-align:center;">{{row[4]}}</td>
+      <td style="text-align:center;">{{row[5]}}</td>
+      <td style="text-align:center;">{{row[6]}}</td>
+   </tr>
+    {% endfor %}
+   </table>
+  </form>
+<br>
+</div>
+<br>
+</div>
+</div>
+<br>
+</div>
+
+{% endblock %}

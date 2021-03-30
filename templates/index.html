@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block main %}
+
+<!-- Photo Grid -->
+<div class="w3-row-padding w3-grayscale" style="margin-bottom:10px">
+  <div class="w3-half">
+    <img src="{{url_for('static', filename='IMG_3.jpg')}}" style="width:100%">
+    <img src="{{url_for('static', filename='IMG_1.jpg')}}" style="width:100%">
+  </div>
+
+  <div class="w3-half">
+    <img src="{{url_for('static', filename='IMG_2.jpg')}}" style="width:100%">
+  </div>
+</div>
+
+{% endblock %}
